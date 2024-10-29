@@ -99,7 +99,7 @@ namespace Signals.Core.Web.Execution.CustomContentHandlers
                     var pathItem = new OpenApiPathItem();
                     var operationItem = new OpenApiOperation();
 
-                    var path = type.FullName.Replace(assemblyNamespace, "").Replace('.', '/');
+                    var path = $"api/{type.FullName.Replace(assemblyNamespace, "").Replace('.', '/')}";
                     var processGenerics = type.BaseType.GetGenericArguments();
 
                     var headersDictionary = new Dictionary<string, OpenApiHeader>();
